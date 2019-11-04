@@ -14,7 +14,7 @@ all the command prefixes and runs the bot itself.
 #### BOT CONSTANTS #####
 
 bot_prefix = ("$", "=", ".")
-bot_token = "NjM4NDI0MTE1ODAzNDU1NDk5.XbhFqw.iJvLU0Ntkm6pujwoxugdd0qQEmo"
+bot_token = ""
 
 client = commands.Bot(command_prefix=bot_prefix)
 
