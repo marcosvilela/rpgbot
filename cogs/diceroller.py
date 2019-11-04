@@ -6,10 +6,6 @@ import re
 class Roller(commands.Cog):
 	def __init__(self, client):
 		self.client = client
-
-	@commands.Cog.listener()
-	async def on_ready(self):
-		print('Bot is ready!')
 	
 	@commands.command(brief='rolls a specified dice')
 	async def roll(self, ctx, dice):

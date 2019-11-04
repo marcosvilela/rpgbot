@@ -14,9 +14,15 @@ all the command prefixes and runs the bot itself.
 #### BOT CONSTANTS #####
 
 bot_prefix = ("$", "=", ".")
-bot_token = "NjM4NDI0MTE1ODAzNDU1NDk5.XbhFqw.iJvLU0Ntkm6pujwoxugdd0qQEmo"
+bot_token = ""
 
 client = commands.Bot(command_prefix=bot_prefix)
+
+#### On ready status changes
+
+@client.event()
+async def on_ready():
+	await client.change_presence(status=discord.Status.idle, activity=discord.Game('Online and working!'))
 
 #### Cogs loading methods
 
