@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import random
 import os
+import token
 
 
 '''
@@ -13,16 +14,18 @@ all the command prefixes and runs the bot itself.
 
 #### BOT CONSTANTS #####
 
-bot_prefix = ("$", "=", ".")
-bot_token = ""
+bot_prefix = ("$")
+#I'll comment the bot_token line since I'm importing it from an untracked file. What you should do is uncomment the line below
+#and paste your bot token right there
+#bot_token = ""
+bot_token = token.bot_token
 
 client = commands.Bot(command_prefix=bot_prefix)
 
 #### On ready status changes
-
-@client.event()
+@client.event
 async def on_ready():
-	await client.change_presence(status=discord.Status.idle, activity=discord.Game('Online and working!'))
+	print('Bot is ready!')
 
 #### Cogs loading methods
 
