@@ -15,15 +15,10 @@ all the command prefixes and runs the bot itself.
 
 bot_prefix = ("$")
 #I'll comment the bot_token line since I'm importing it from an untracked file. What you should do is uncomment the line below
-#and paste your bot token right there
+#and paste your bot token right there, if you're running the bot locally.
 #bot_token = ""
-def fetch_token(file):
-	with open('bottoken.txt', "r") as f:
-		lines = f.readlines()
-		return lines[0].strip()
 
-bot_token = fetch_token('./bottoken.txt') 
-
+bot_token = os.environ['bot_token']
 client = commands.Bot(command_prefix=bot_prefix)
 
 #### On ready status changes
